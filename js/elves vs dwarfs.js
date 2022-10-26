@@ -19,7 +19,7 @@ function crearPersonaje() {
     vida = parseInt(promptDato("Ingrese la vida (solo enteros)"))
     poder = parseInt(promptDato("Ingrese el poder (solo enteros)"))
 
-    return new Personaje(nombre, vida, poder) 
+    return new Personaje(nombre, vida, poder)
 }
 
 function crearClan(nombre_de_clan) {
