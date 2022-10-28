@@ -13,111 +13,166 @@
 </head>
 <body>
     <header>
-        <nav class="navbar navbar-expand-lg bg-dark">
-            <div class="container-fluid">
-                <a class="navbar-brand text-white" href="#">Bebidas</a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
-                    data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
-                    aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                        <li class="nav-item">
-                            <a class="nav-link active text-white mx-2" aria-current="page" href="#">Comprar</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-white mx-2" href="#">Link</a>
-                        </li>
-                        <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle text-white mx-2" href="#" role="button" data-bs-toggle="dropdown"
-                                aria-expanded="false">
-                                Productos
-                            </a>
-                            <ul class="dropdown-menu bg-dark">
-                                <li><a class="dropdown-item text-white" href="#">Cervezas</a></li>
-                                <li><a class="dropdown-item text-white" href="#">Whiskys</a></li>
-                                <li><a class="dropdown-item text-white" href="#">Vinos</a></li>
-                            </ul>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link disabled text-white mx-2">Contacto</a>
-                        </li>
-                    </ul>
-                    <ul class="navbar-nav sm-icons">
-                        <li><a class="nav-link text-white me-2" href="#"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-person-circle" viewBox="0 0 16 16">
-                            <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0z"/>
-                            <path fill-rule="evenodd" d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8zm8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1z"/>
-                        </svg></a></li>
-                        <li><a class="nav-link text-white me-2" href="#"><svg xmlns="http://www.w3.org/2000/svg" width="24"
-                                    height="24" fill="currentColor" class="bi bi-cart" viewBox="0 0 16 16">
-                                    <path
-                                        d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .491.592l-1.5 8A.5.5 0 0 1 13 12H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5zM3.102 4l1.313 7h8.17l1.313-7H3.102zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2zm7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2z" />
-                                </svg></a></li>
-                    </ul>
-                    <form class="d-flex" role="search">
-                        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-                        <button class="btn btn-outline-success text-white" type="submit">Search</button>
-                    </form>
-                </div>
-            </div>
-        </nav>
+      <ul class="nav nav-pills mb-3 bg-dark container-fluid position-sticky top-0" id="pills-tab" role="tablist">
+        <li class="nav-item m-3" role="presentation">
+          <a class="nav-link" id="pills-home-tab" data-bs-toggle="pill" data-bs-target="#pills-home" type="button" role="tab" aria-controls="pills-home" aria-selected="true">Home</a>
+        </li>
+        <li class="nav-item m-3" role="presentation">
+          <a class="nav-link active" id="pills-profile-tab" data-bs-toggle="pill" data-bs-target="#pills-profile" type="button" role="tab" aria-controls="pills-profile" aria-selected="false">Productos</a>
+        </li>
+        <li class="nav-item m-3" role="presentation">
+          <a class="nav-link" id="pills-contact-tab" data-bs-toggle="pill" data-bs-target="#pills-contact" type="button" role="tab" aria-controls="pills-contact" aria-selected="false">Carrito</a>
+        </li>
+      </ul>
     </header>
     <main>
-        <!-- LISTA -->
-        <div class="container text-center">
-          <div class="drinkcont row p-5">
-            <div class="cardfull drinkbox col-12 col-md-6 col-lg-3">
-                <div class="card shadow h-100 card-color">
-                <img src="./images/card1imgBeer1.5.jpg" class="card-img-top" alt="cerveza roja"/>
-                <div class="card-body d-flex flex-column">
-                  <h5 class="card-title">$1500</h5>
-                  <p class="card-text">
-                    Six pack cerveza Los Andes roja.
-                  </p>
+      <div class="alert alert-success container position-sticky hide top-0" role="alert">
+        Producto agregado, revisar carrito! :)
+      </div>
+      <div class="alert alert-danger container position-sticky remove top-0" role="alert">
+        Producto eliminado!
+      </div>
+      <div class="tab-content" id="pills-tabContent">
+        <div class="tab-pane fade" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab" tabindex="0">1</div>
+        <div class="tab-pane fade show active" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab" tabindex="0">
+          <div class="container text-center">
+            <div class="drinkcont row p-5">
+              <div class="cardfull drinkbox col-12 col-md-6 col-lg-3">
+                  <div class="card shadow h-100 card-color">
+                  <img src="./images/card1imgBeer1.5.jpg" class="card-img-top" alt="cerveza roja"/>
+                  <div class="card-body d-flex flex-column">
+                    <h5 class="card-title">$1500</h5>
+                    <p class="card-text">
+                      Six pack cerveza Los Andes roja.
+                    </p>
+                      <button class="btn btn-primary button">Comprar</button>
+                  </div>
+                </div>
+              </div>
+              <div class="cardfull drinkbox col-12 col-md-6 col-lg-3">
+                  <div class="card shadow h-100 card-color">
+                  <img src="./images/card2imgBeer1.5.jpg" class="card-img-top" alt="cerveza rubia"/>
+                  <div class="card-body d-flex flex-column">
+                    <h5 class="card-title">$1300</h5>
+                    <p class="card-text">
+                      Six pack cerveza Los Andes Rubia.
+                    </p>
                     <button class="btn btn-primary button">Comprar</button>
+                  </div>
                 </div>
               </div>
-            </div>
-            <div class="cardfull drinkbox col-12 col-md-6 col-lg-3">
+              <div class="cardfull drinkbox col-12 col-md-6 col-lg-3">
                 <div class="card shadow h-100 card-color">
-                <img src="./images/card2imgBeer1.5.jpg" class="card-img-top" alt="cerveza rubia"/>
-                <div class="card-body d-flex flex-column">
-                  <h5 class="card-title">$1300</h5>
-                  <p class="card-text">
-                    Six pack cerveza Los Andes Rubia.
-                  </p>
-                  <button class="btn btn-primary button">Comprar</button>
+                  <img src="./images/card3imgBeer1.5.jpg" class="card-img-top" alt="cerveza ipa" />
+                  <div class="card-body d-flex flex-column">
+                    <h5 class="card-title">$1500</h5>
+                    <p class="card-text">
+                      Six pack cerveza Los Andes IPA.
+                    </p>
+                    <button class="btn btn-primary button">Comprar</button>
+                  </div>
+                </div>
+              </div>
+              <div class="cardfull drinkbox col-12 col-md-6 col-lg-3">
+                <div class="card shadow h-100 card-color">
+                  <img src="./images/card4imgBeer400.jpg" class="card-img-top" alt="cerveza ipa imperial" />
+                  <div class="card-body d-flex flex-column">
+                    <h5 class="card-title">$350</h5>
+                    <p class="card-text">
+                      Botella cerveza Imperial APA.
+                    </p>
+                    <button class="btn btn-primary button">Comprar</button>
+                  </div>
+                </div>
+              </div>
+              <div class="cardfull drinkbox col-12 col-md-6 col-lg-3">
+                <div class="card shadow h-100 card-color">
+                  <img src="./images/card6imgBeer.jpg" class="card-img-top" alt="cerveza ipa" />
+                  <div class="card-body d-flex flex-column">
+                    <h5 class="card-title">$1500</h5>
+                    <p class="card-text">
+                      Ten pack Coronitas.
+                    </p>
+                    <button class="btn btn-primary button">Comprar</button>
+                  </div>
+                </div>
+              </div>
+              <div class="cardfull drinkbox col-12 col-md-6 col-lg-3">
+                <div class="card shadow h-100 card-color">
+                  <img src="./images/1absolut.webp" class="card-img-top" alt="cerveza ipa" />
+                  <div class="card-body d-flex flex-column">
+                    <h5 class="card-title">$5500</h5>
+                    <p class="card-text">
+                      Absolut Rashberry 750ml.
+                    </p>
+                    <button class="btn btn-primary button">Comprar</button>
+                  </div>
+                </div>
+              </div>
+              <div class="cardfull drinkbox col-12 col-md-6 col-lg-3">
+                <div class="card shadow h-100 card-color">
+                  <img src="./images/1bombay.webp" class="card-img-top" alt="cerveza ipa" />
+                  <div class="card-body d-flex flex-column">
+                    <h5 class="card-title">$6350</h5>
+                    <p class="card-text">
+                      Gin Bombay 750ml.
+                    </p>
+                    <button class="btn btn-primary button">Comprar</button>
+                  </div>
+                </div>
+              </div>
+              <div class="cardfull drinkbox col-12 col-md-6 col-lg-3">
+                <div class="card shadow h-100 card-color">
+                  <img src="./images/1smirnoff.webp" class="card-img-top" alt="cerveza ipa" />
+                  <div class="card-body d-flex flex-column">
+                    <h5 class="card-title">$2200</h5>
+                    <p class="card-text">
+                      Vodka Smirnoff 750ml.
+                    </p>
+                    <button class="btn btn-primary button">Comprar</button>
+                  </div>
+                </div>
+              </div>
+              <div class="cardfull drinkbox col-12 col-md-6 col-lg-3">
+                <div class="card shadow h-100 card-color">
+                  <img src="./images/1tequila.webp" class="card-img-top" alt="cerveza ipa" />
+                  <div class="card-body d-flex flex-column">
+                    <h5 class="card-title">$4800</h5>
+                    <p class="card-text">
+                      Tequila Jose Cuervo 750ml.
+                    </p>
+                    <button class="btn btn-primary button">Comprar</button>
+                  </div>
+                </div>
+              </div>
+              <div class="cardfull drinkbox col-12 col-md-6 col-lg-3">
+                <div class="card shadow h-100 card-color">
+                  <img src="./images/blacklabel.webp" class="card-img-top" alt="cerveza ipa" />
+                  <div class="card-body d-flex flex-column">
+                    <h5 class="card-title">$9500</h5>
+                    <p class="card-text">
+                      Whisky Johnnie Walker Black Label 750ml.
+                    </p>
+                    <button class="btn btn-primary button">Comprar</button>
+                  </div>
+                </div>
+              </div>
+              <div class="cardfull drinkbox col-12 col-md-6 col-lg-3">
+                <div class="card shadow h-100 card-color">
+                  <img src="./images/bluelabel.webp" class="card-img-top" alt="cerveza ipa" />
+                  <div class="card-body d-flex flex-column">
+                    <h5 class="card-title">$55000</h5>
+                    <p class="card-text">
+                      Whisky Johnnie Walker Blue Label 750ml.
+                    </p>
+                    <button class="btn btn-primary button">Comprar</button>
+                  </div>
                 </div>
               </div>
             </div>
-            <div class="cardfull drinkbox col-12 col-md-6 col-lg-3">
-              <div class="card shadow h-100 card-color">
-                <img src="./images/card3imgBeer1.5.jpg" class="card-img-top" alt="cerveza ipa" />
-                <div class="card-body d-flex flex-column">
-                  <h5 class="card-title">$1500</h5>
-                  <p class="card-text">
-                    Six pack cerveza Los Andes IPA.
-                  </p>
-                  <button class="btn btn-primary button">Comprar</button>
-                </div>
-              </div>
-            </div>
-            <div class="cardfull drinkbox col-12 col-md-6 col-lg-3">
-              <div class="card shadow h-100 card-color">
-                <img src="./images/card4imgBeer400.jpg" class="card-img-top" alt="cerveza ipa imperial" />
-                <div class="card-body d-flex flex-column">
-                  <h5 class="card-title">$350</h5>
-                  <p class="card-text">
-                    Botella cerveza Imperial APA.
-                  </p>
-                  <button class="btn btn-primary button">Comprar</button>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <table class="table table-dark table-hover">
+          </div></div>
+        <div class="tab-pane fade" id="pills-contact" role="tabpanel" aria-labelledby="pills-contact-tab" tabindex="0">
+          <table class="table table-dark table-hover">
             <thead>
               <tr>
                 <th scope="col">#</th>
@@ -134,11 +189,13 @@
             <div class="col">
               <h3 class="tablaTotal">Total: 0</h3>
             </div>
-            <div class="col d-flex justify content-end">
-              <button class="btn btn-success">Comprar</button>
+            <div class="col d-flex justify-content-end">
+              <button class="btn btn-success buttonCarritoComprar">Comprar</button>
             </div>
           </div>
-      </main>
+        </div>
+      </div>
+    </main>
         <!-- JavaScript Bundle with Popper -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
 </body>

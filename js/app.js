@@ -12,7 +12,7 @@ function addCarrito(e) {
     const itemName = item.querySelector('.card-text').textContent
     const itemPrice = item.querySelector('.card-title').textContent
     const newItem = {
-        title: itemName,
+        title: itemName.trim(),
         price: itemPrice,
         cantidad: 1
     }
@@ -20,6 +20,13 @@ function addCarrito(e) {
 }
 
 function addItemCarrito (newItem) {
+
+    const alert = document.querySelector('.alert')
+    setTimeout(function(){
+        alert.classList.add('hide')
+    }, 1000)
+        alert.classList.remove('hide')
+        
     const inputElement = tbody.getElementsByClassName('inputCantidad')
     for(let i= 0; i< carrito.length; i++) {
         if(carrito[i].title.trim()=== newItem.title.trim()) {
@@ -51,6 +58,7 @@ function renderCarrito() {
         tbody.append(tr)
 
         tr.querySelector('.delete').addEventListener('click', deleteItemCarrito)
+        tr.querySelector('.inputCantidad').addEventListener('change', sumaCantidad)
     })
     carritoTotal()
 
@@ -64,6 +72,7 @@ function carritoTotal() {
         Total = Total + precio*item.cantidad
     })
     itemCarTotal.innerHTML = `Total $${Total}`
+    addLocalStorage ()
 }
 
 function deleteItemCarrito(e) {
@@ -75,6 +84,37 @@ function deleteItemCarrito(e) {
             carrito.splice(i,1)
         }
     }
+    const alert = document.querySelector('.remove')
+    setTimeout(function(){
+        alert.classList.add('remove')
+    }, 1000)
+        alert.classList.remove('remove')
+
     tr.remove ()
     carritoTotal()
+}
+
+function sumaCantidad(e) {
+    const sumaInput= e.target
+    const tr = sumaInput.closest(".ItemCarrito")
+    const title = tr.querySelector('.title').textContent
+    carrito.forEach(item => {
+        if(item.title.trim()=== title) {
+            sumaInput.value < 1 ? (sumaInput.value = 1) : sumaInput.value
+            item.cantidad = sumaInput.value
+            carritoTotal()
+        }
+    })
+}
+
+function addLocalStorage (){
+    localStorage.setItem ('carrito', JSON.stringify(carrito))
+}
+
+window.onload = function() {
+    const storage = JSON.parse(localStorage.getItem('carrito'))
+    if(storage) {
+        carrito = storage
+        renderCarrito ()
+    }
 }
