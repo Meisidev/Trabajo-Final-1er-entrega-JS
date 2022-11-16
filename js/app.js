@@ -1,10 +1,11 @@
 let carrito = []
 const tbody = document.querySelector('.tbody')
 const clickButton = document.querySelectorAll('.button')
-
+//agregar a carrito
 clickButton.forEach(btn => {
     btn.addEventListener('click', addCarrito)
 })
+
 
 function addCarrito(e) {
     const button = e.target
@@ -42,6 +43,7 @@ function addItemCarrito (newItem) {
     renderCarrito()
 }
 
+//agregar carrito DOM
 function renderCarrito() {
     tbody.innerHTML = ''
     carrito.map(item => {
@@ -64,6 +66,7 @@ function renderCarrito() {
 
 }
 
+//suma total
 function carritoTotal() {
     let Total = 0
     const itemCarTotal = document.querySelector('.tablaTotal')
@@ -75,6 +78,7 @@ function carritoTotal() {
     addLocalStorage ()
 }
 
+//borrar item carrito
 function deleteItemCarrito(e) {
     const buttonDelete = e.target
     const tr = buttonDelete.closest (".ItemCarrito")
@@ -93,7 +97,7 @@ function deleteItemCarrito(e) {
     tr.remove ()
     carritoTotal()
 }
-
+//suma en DOM
 function sumaCantidad(e) {
     const sumaInput= e.target
     const tr = sumaInput.closest(".ItemCarrito")
@@ -106,11 +110,11 @@ function sumaCantidad(e) {
         }
     })
 }
-
+//JSON, guardamos la data en el localstorage
 function addLocalStorage (){
     localStorage.setItem ('carrito', JSON.stringify(carrito))
 }
-
+//al actualizar pagina, mantener items en carrito
 window.onload = function() {
     const storage = JSON.parse(localStorage.getItem('carrito'))
     if(storage) {
